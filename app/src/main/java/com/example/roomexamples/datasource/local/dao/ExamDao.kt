@@ -5,6 +5,7 @@ import androidx.room.Query
 import androidx.room.Transaction
 import com.example.roomexamples.datasource.local.entity.Exam
 import com.example.roomexamples.datasource.local.entity.composite.manytoome.ExamAndExaminator
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ExamDao : BaseDao<Exam> {
@@ -13,6 +14,9 @@ interface ExamDao : BaseDao<Exam> {
 
     @Query("SELECT * FROM Exam")
     suspend fun getExams() : List<Exam>
+
+    @Query("SELECT * FROM Exam")
+    fun getExamsContinuous() : Flow<List<Exam>>
 
     //Composite functions
 
