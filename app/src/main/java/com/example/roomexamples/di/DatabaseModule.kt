@@ -22,6 +22,12 @@ object DatabaseModule {
         }
     }
 
+    val MIGRATION_16_17 = object : Migration(16, 17) {
+        override fun migrate(database: SupportSQLiteDatabase) {
+            database.execSQL("CREATE INDEX index_exam_examinator_id ON exam(examinator_id)")
+        }
+    }
+
     @Singleton
     @Provides
     fun provideAppDatabase(
@@ -31,7 +37,8 @@ object DatabaseModule {
         AppDatabase::class.java,
         "student-db"
     ).addMigrations(
-        MIGRATION_14_15
+        MIGRATION_14_15,
+        MIGRATION_16_17,
     ).build()
 
     @Singleton
