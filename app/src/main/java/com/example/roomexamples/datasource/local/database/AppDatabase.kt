@@ -1,7 +1,10 @@
 package com.example.roomexamples.datasource.local.database
 
+import androidx.room.AutoMigration
 import androidx.room.Database
+import androidx.room.DeleteColumn
 import androidx.room.RoomDatabase
+import androidx.room.migration.AutoMigrationSpec
 import com.example.roomexamples.datasource.local.dao.*
 import com.example.roomexamples.datasource.local.entity.*
 import com.example.roomexamples.datasource.local.view.LecturerArticles
@@ -18,9 +21,20 @@ import com.example.roomexamples.datasource.local.view.LecturerArticles
     views = [
         LecturerArticles::class
     ],
-    version = 12,
+    autoMigrations = [
+        AutoMigration(from = 13, to = 14),
+        AutoMigration(
+            from = 15,
+            to = 16,
+            spec = AppDatabase.DeleteAdditionalDescriptionMigration::class
+        ),
+     ],
+    version = 16,
+    exportSchema = true,
 )
 abstract class AppDatabase : RoomDatabase() {
+    @DeleteColumn(tableName = "Diploma", columnName = "description_additional")
+    class DeleteAdditionalDescriptionMigration : AutoMigrationSpec
 
     abstract fun studentDao() : StudentDao
 

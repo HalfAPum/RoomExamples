@@ -18,4 +18,6 @@ data class Diploma(
     val studentId: Int?,
     @ColumnInfo(name = "theme")
     val theme: String?,
+    @ColumnInfo(name = "description")
+    val description: String? = null,
 )

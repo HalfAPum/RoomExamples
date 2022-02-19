@@ -2,6 +2,8 @@ package com.example.roomexamples.di
 
 import android.content.Context
 import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.roomexamples.datasource.local.database.AppDatabase
 import dagger.Module
 import dagger.Provides
@@ -14,6 +16,12 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
 
+    val MIGRATION_14_15 = object : Migration(14, 15) {
+        override fun migrate(database: SupportSQLiteDatabase) {
+            database.execSQL("ALTER TABLE Diploma ADD COLUMN description_additional TEXT")
+        }
+    }
+
     @Singleton
     @Provides
     fun provideAppDatabase(
@@ -22,6 +30,8 @@ object DatabaseModule {
         applicationContext,
         AppDatabase::class.java,
         "student-db"
+    ).addMigrations(
+        MIGRATION_14_15
     ).build()
 
     @Singleton
