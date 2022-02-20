@@ -13,7 +13,7 @@ import androidx.room.*
 data class Student(
     @PrimaryKey
     @ColumnInfo(name = "student_id")
-    val studentId: Int?,
+    val studentId: Int,
     @ColumnInfo(name = "group")
     val group: String?,
     @Embedded

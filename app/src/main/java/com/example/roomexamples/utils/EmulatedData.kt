@@ -53,49 +53,49 @@ object EmulatedData {
     )
 
     fun getArticles() = listOf(
-        Article(theme = "Some small theory about world",
+        Article(1, theme = "Some small theory about world",
             publishingHouse = "Moderna house", publicationDate = "07-09-2020"
         ),
-        Article(theme = "Good news for all about COVID",
+        Article(2, theme = "Good news for all about COVID",
             publishingHouse = "Sputnik house", publicationDate = "08-11-2021"
         ),
-        Article(theme = "Top grid inventions",
+        Article(3, theme = "Top grid inventions",
             publishingHouse = "Vide spread", publicationDate = "07-09-2020"
         ),
-        Article(theme = "Violance against childrens",
+        Article(4, theme = "Violance against childrens",
             publishingHouse = "Moderna house", publicationDate = "07-09-2020"
         ),
-        Article(theme = "Good boy is bad boy",
+        Article(5, theme = "Good boy is bad boy",
             publishingHouse = "Vide spread", publicationDate = "07-09-2020"
         ),
-        Article(theme = "ted talks",
+        Article(6, theme = "ted talks",
             publishingHouse = "Purple house", publicationDate = "07-09-2020"
         ),
-        Article(theme = "Asian problems",
+        Article(7, theme = "Asian problems",
             publishingHouse = "Yellow house", publicationDate = "07-09-2020"
         ),
-        Article(theme = "Russian problems",
+        Article(8, theme = "Russian problems",
             publishingHouse = "Red house", publicationDate = "07-09-2020"
         ),
-        Article(theme = "Aliexpress fastest delivery",
+        Article(9, theme = "Aliexpress fastest delivery",
             publishingHouse = "Green house", publicationDate = "07-09-2020"
         ),
-        Article(theme = "No racists everywhere",
+        Article(10, theme = "No racists everywhere",
             publishingHouse = "BLACK house", publicationDate = "07-09-2020"
         ),
-        Article(theme = "God bless america",
+        Article(11, theme = "God bless america",
             publishingHouse = "WHITE house", publicationDate = "07-09-2020"
         ),
-        Article(theme = "Some small theory about world",
+        Article(12, theme = "Some small theory about world",
             publishingHouse = "Moderna house", publicationDate = "07-09-2020"
         ),
-        Article(theme = "Avoid shit",
+        Article(13, theme = "Avoid shit",
             publishingHouse = "Sputnik house", publicationDate = "07-09-2020"
         ),
-        Article(theme = "Krivuy rig is new international sport house?",
+        Article(14, theme = "Krivuy rig is new international sport house?",
             publishingHouse = "Vasil house", publicationDate = "07-09-2020"
         ),
-        Article(theme = "Top 10 rich farmers",
+        Article(15, theme = "Top 10 rich farmers",
             publishingHouse = "Vasil house", publicationDate = "07-09-2020"
         ),
     )
