@@ -29,7 +29,7 @@ import com.example.roomexamples.datasource.local.view.LecturerArticles
             spec = AppDatabase.DeleteAdditionalDescriptionMigration::class
         ),
      ],
-    version = 17,
+    version = 18,
     exportSchema = true,
 )
 abstract class AppDatabase : RoomDatabase() {

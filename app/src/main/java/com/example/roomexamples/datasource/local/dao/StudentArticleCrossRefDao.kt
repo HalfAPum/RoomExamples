@@ -11,6 +11,9 @@ interface StudentArticleCrossRefDao : BaseDao<StudentArticleCrossRef> {
     fun getStudentIdsByArticleId(articleId: Int): List<Int>
 
     @Query("SELECT article_id FROM StudentArticleCrossRef WHERE student_id = :studentId")
-    fun getStudentArticleIdsStudentId(studentId: Int): List<Int>
+    fun getArticleIdsByStudentId(studentId: Int): List<Int>
+
+    @Query("SELECT * FROM StudentArticleCrossRef")
+    fun getStudentArticleCrossRef(): List<StudentArticleCrossRef>
 
 }

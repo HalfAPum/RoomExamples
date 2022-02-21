@@ -40,16 +40,16 @@ object EmulatedData {
     )
 
     fun getExams() = listOf(
-        Exam(studentId = 10001, subject = "Philisophy", examinatorId = 1, mark = 60),
-        Exam(studentId = 10002, subject = "Data Structures", examinatorId = 2, mark = 40),
-        Exam(studentId = 10003, subject = "Math", examinatorId = 3, mark = 70),
-        Exam(studentId = 10004, subject = "Physics", examinatorId = 2, mark = 50),
-        Exam(studentId = 10005, subject = "OOP", examinatorId = 3, mark = 80),
-        Exam(studentId = 10001, subject = "Refactoring", examinatorId = 1, mark = 90),
-        Exam(studentId = 10002, subject = "Algorithms", examinatorId = 1, mark = 90),
-        Exam(studentId = 10003, subject = "Physics", examinatorId = 1, mark = 90),
-        Exam(studentId = 10005, subject = "Refactoring", examinatorId = 2, mark = 66),
-        Exam(studentId = 10004, subject = "Philisophy", examinatorId = 2, mark = 66),
+        Exam(examId = 1, studentId = 10001, subject = "Philisophy", examinatorId = 1, mark = 60),
+        Exam(examId = 2, studentId = 10002, subject = "Data Structures", examinatorId = 2, mark = 40),
+        Exam(examId = 3, studentId = 10003, subject = "Math", examinatorId = 3, mark = 70),
+        Exam(examId = 4, studentId = 10004, subject = "Physics", examinatorId = 2, mark = 50),
+        Exam(examId = 5, studentId = 10005, subject = "OOP", examinatorId = 3, mark = 80),
+        Exam(examId = 6, studentId = 10001, subject = "Refactoring", examinatorId = 1, mark = 90),
+        Exam(examId = 7, studentId = 10002, subject = "Algorithms", examinatorId = 1, mark = 90),
+        Exam(examId = 8, studentId = 10003, subject = "Physics", examinatorId = 1, mark = 90),
+        Exam(examId = 9, studentId = 10005, subject = "Refactoring", examinatorId = 2, mark = 66),
+        Exam(examId = 10, studentId = 10004, subject = "Philisophy", examinatorId = 2, mark = 66),
     )
 
     fun getArticles() = listOf(
@@ -101,11 +101,11 @@ object EmulatedData {
     )
 
     fun getDiplomas() = listOf(
-        Diploma(studentId = 10001, theme = "Vechniu dvigatel liskova"),
-        Diploma(studentId = 10002, theme = "Ptiza ubiiza"),
-        Diploma(studentId = 10003, theme = "Super optiized sorting list"),
-        Diploma(studentId = 10004, theme = "Some bullshit"),
-        Diploma(studentId = 10005, theme = "Daite troechky pliz"),
+        Diploma(diplomaId = 1, studentId = 10001, theme = "Vechniu dvigatel liskova"),
+        Diploma(diplomaId = 2, studentId = 10002, theme = "Ptiza ubiiza"),
+        Diploma(diplomaId = 3, studentId = 10003, theme = "Super optiized sorting list"),
+        Diploma(diplomaId = 4, studentId = 10004, theme = "Some bullshit"),
+        Diploma(diplomaId = 5, studentId = 10005, theme = "Daite troechky pliz"),
     )
 
     fun getStudentArticleCrossRef() = listOf(
@@ -137,6 +137,32 @@ object EmulatedData {
         StudentArticleCrossRef(10005, 14),
         StudentArticleCrossRef(10005, 7),
         StudentArticleCrossRef(10003, 1),
-        StudentArticleCrossRef(10005, 1),
+    )
+
+    fun getSingleArticle() = Article(
+        articleId = 1,
+        theme = "Saving people from themeselves",
+        publishingHouse = "New house of moderna",
+        publicationDate = "06-06-2002",
+    )
+
+    fun getSingleDiploma() = Diploma(
+        1,
+        10003,
+        "Molecular phisics and its impact on our nature",
+        "1488-882"
+    )
+
+    fun getSingleExam() = Exam(
+        examId = 1,
+        studentId = 10004,
+        subject = "Gachi history",
+        examinatorId = 3,
+        mark = 100
+    )
+
+    fun getSingleStudentArticleCrossRef() = StudentArticleCrossRef(
+        10001,
+        1
     )
 }
