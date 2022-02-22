@@ -165,4 +165,12 @@ object EmulatedData {
         10001,
         1
     )
+
+    fun getSingleStudent() = Student(123, "ELBI-13-2",
+        PersonalData("Evgeniy", "Chepyshilo", "04-12-1998", "+34896724532"), 1
+    )
+
+    fun getSingleStudentWithFakeScientificDirectorId() = Student(123, "ELBI-13-2",
+        PersonalData("Evgeniy", "Chepyshilo", "04-12-1998", "+34896724532"), -10
+    )
 }
