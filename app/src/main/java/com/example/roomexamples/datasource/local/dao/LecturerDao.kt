@@ -12,6 +12,7 @@ import com.example.roomexamples.datasource.local.entity.composite.nested.Lecture
 import com.example.roomexamples.datasource.local.entity.composite.onetomany.ExaminatorAndExam
 import com.example.roomexamples.datasource.local.entity.composite.onetomany.ScientificDirectorAndStudent
 import com.example.roomexamples.datasource.local.view.LecturerArticles
+import com.example.roomexamples.utils.EmulatedData
 
 @Dao
 interface LecturerDao : BaseDao<Lecturer> {

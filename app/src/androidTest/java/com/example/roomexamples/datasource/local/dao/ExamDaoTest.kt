@@ -9,6 +9,7 @@ import com.example.roomexamples.datasource.local.entity.composite.manytoome.Exam
 import com.example.roomexamples.utils.EmulatedData
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runTest
@@ -80,6 +81,24 @@ class ExamDaoTest : BaseDaoTest<ExamDao, Exam>() {
         dao.insert(exams2)
         val result = dao.getExamsContinuous().first()
         assertThat(result).isEqualTo(exams1 + exams2)
+    }
+
+    @Test
+    fun testFlowAgain() = runTest {
+        val exams = EmulatedData.getExams()
+        val exams1 = exams.subList(0,3)
+        val exams2 = exams.subList(3,6)
+
+        val deferred = async { dao.getExamsContinuous().take(2).toList() }
+
+        dao.insert(exams1)
+        dao.insert(exams2)
+
+        val result = deferred.await()
+
+        Log.d("tag1", "tag1 WTF ${result}")
+
+        assertThat(result).isEqualTo(listOf(exams1 + exams2, exams1))
     }
 
 }
